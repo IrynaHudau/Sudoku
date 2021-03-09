@@ -1,0 +1,36 @@
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: green;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .bar4{
+    width: 35px;
+    height: 5px;
+    background-color: red;
+    margin: 0 -1px;
+    transition: 0.4s;
+    transform: rotate(90deg) translate(11px, 10px);
+  }
+  .bar5 {
+    width: 35px;
+    height: 5px;
+    background-color: red;
+    margin: 0 10px;
+    transition: 0.4s;
+    transform: rotate(90deg) translate(6px, 10px);
+   
+  }
+  
+  .bar6 {
+    width: 35px;
+    height: 5px;
+    background-color: red;
+    margin: 0 22px;
+    transition: 0.4s;
+    transform: rotate(90deg) translate(1px, 10px);
+   
+  }
+  

@@ -1,0 +1,12 @@
+.main{
+  margin-top:16px;
+  margin-bottom: 16px;
+}
+
+.footer {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+  }
+

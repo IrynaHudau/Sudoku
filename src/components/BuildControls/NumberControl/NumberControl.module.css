@@ -1,0 +1,44 @@
+.number_box{
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    color: black;
+    font-family: inherit;
+    font-size: 1.2em;
+    margin: 10px;
+    padding: 5px;
+}
+
+.number_box button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+
+.styled{
+    border: none;
+    outline: none;
+    padding: 5px 8px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: black;
+    background-color: inherit;
+}
+
+.active, .styled:hover {
+    background-color: #666;
+    color: white;
+  } 
+
+.number_box button:disabled{
+    color: lightgray;
+}
+
+@media (min-width:200px) and (min-height:560px){
+  .styled{
+    font-size: 1rem;
+  }
+
+}
+
