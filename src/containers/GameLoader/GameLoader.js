@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import cssStyles from '../LoadGame/LoadGame.module.css';
+import cssStyles from '../GameLoader/GameLoader.module.css';
 
 import GameField from '../../components/GameField/GameField';
 import NumbersControl from '../../components/BuildControls/NumberControl/NumbersControl';
@@ -7,7 +7,7 @@ import NumbersControl from '../../components/BuildControls/NumberControl/Numbers
 import StartModal from '../../components/Modals/StartModal/StartModal';
 import WarningEmptyCellPopUp from '../../components/Popups/WarningEmptyCell';
 import WinnerModal from '../../components/Modals/EndModal/WinnerModal';
-import LuserModal from '../../components/Modals/EndModal/LuserModal';
+import LooserModal from '../../components/Modals/EndModal/LooserModal';
 
 import fillGameBoard from '../FillGameField/FillGameField';
 import findCoordinateForNumbers from '../FillGameField/FindCoordinateForNumbers';
@@ -39,7 +39,6 @@ class LoadGame extends Component{
             activeNum: null,
             endGameMsg : '',
             showEndModal: false,
-            setTimer:false,
         };
     };
 
@@ -72,11 +71,6 @@ class LoadGame extends Component{
         let data = fillGameBoard(this.state.level);
         let coordinateXY = findCoordinateForNumbers(data);
         this.setState({fieldData: data, notActivCellXY: coordinateXY});
-
-        this.setState({setTimer: true});
-        setTimeout(function(){
-             this.setState({setTimer:false});
-        }.bind(this),1000);
     }
 
 
@@ -127,11 +121,6 @@ class LoadGame extends Component{
     render(){
         let startTimer = false;
         const enable = this.state.level != 0  &&  this.state.showStartModal == false;
-      
-        if(enable){
-            startTimer = true;
-        }
-        // console.log(startTimer);
 
         let popup = null;
         if(this.state.showPopup){
@@ -141,7 +130,7 @@ class LoadGame extends Component{
         if(this.state.endGameMsg == 'Puzzle done!'){
             gameEnd = (<WinnerModal show={this.state.showEndModal} startOverHandler={this.startOverHandler} value={this.state.endGameMsg}/>);
         }else{
-            gameEnd = (<LuserModal show={this.state.showEndModal} startOverHandler={this.startOverHandler} value={this.state.endGameMsg}/>);
+            gameEnd = (<LooserModal show={this.state.showEndModal} startOverHandler={this.startOverHandler} value={this.state.endGameMsg}/>);
         }
         
         return(
@@ -156,7 +145,7 @@ class LoadGame extends Component{
                         // calcelledGame={this.calcelGameHandler}
                         startGame={this.startGameHandler}
                     />           
-                    <TimerControl disabled={!enable} setTimer={this.state.setTimer}/>
+                    <TimerControl disabled={!enable} startOverHandler={this.startOverHandler}/>
                     <GameField disabled={!enable} data={this.state.fieldData} cell={this.selectGameFieldCellHandler} nonActiveCells={this.state.notActivCellXY}/>
                     <NumbersControl disabled={!enable} clicked={this.selectNumberHandler} activeNum={this.state.activeNum}/>
                 </div>

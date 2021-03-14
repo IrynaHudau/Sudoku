@@ -1,0 +1,38 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+
+.navbar {
+    width: 100%;
+    /* background-color: #555;*/
+    /* overflow: hidden; */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .navbar a {
+    /* float: left; */
+    display: block;
+
+    padding: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover ,
+  .navbar a:active,
+  .navbar a.active {
+    background-color: #40A4C8;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .navbar{
+        flex-flow: column;
+      /* float: none;
+      display: block; */
+    }
+  }

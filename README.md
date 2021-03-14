@@ -1,5 +1,14 @@
 # Getting Started with Create React App
 
+`Components Diagram`
+
+![Create React App](docs/sudoku_class.png)
+
+
+`UML Diagram`
+
+![Create React App](docs/sudoku_Components.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

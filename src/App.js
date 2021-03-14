@@ -1,11 +1,11 @@
 import './App.css';
 import Layout from './containers/Layout/Layout';
-import LoadGame from './containers/LoadGame/LoadGame';
+import GameLoader from './containers/GameLoader/GameLoader';
 
 function App() {
   return (
     <Layout className = "App">
-      <LoadGame/>
+      <GameLoader/>
     </Layout>
   );
 }
