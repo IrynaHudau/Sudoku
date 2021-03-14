@@ -1,11 +1,16 @@
 import React from 'react';
-import Clock from '../TimerControl/Clock/Clock';
+import StopWatch from './StopWatch/StopWatch';
+import GameControls from './GameControls/GameControls';
 
-const timerControler = (props) => (
-    <div style={{backgroundColor: '#f1f1f1', margin: '10px', display: 'flex',justifyContent: 'center'}} >      
-      <Clock active={props.disabled} startTimer={props.setTimer}/>
-      {/* {console.log(props.setTimer)} */}
+const timerControler = (props) => {
+
+  return(
+    // <div style={{backgroundColor: '#f1f1f1', margin: '10px',display: 'flex',justifyContent: 'center'}} >      
+    <div style={{backgroundColor: '#f1f1f1', margin: '10px', display: 'flex', flexDirection:'row', justifyContent:'space-between'}} >  
+      <GameControls  active={props.disabled} clicked={props.startOverHandler} />
+      <StopWatch active={props.disabled} />
     </div>
-);
+  );
+}
 
 export default timerControler;

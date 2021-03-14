@@ -1,7 +1,7 @@
 import React from 'react';
 import cssStyles from '../EndModal/EndModal.module.css';
 
-const luserModal = (props) => (
+const looserModal = (props) => (
     <div className={cssStyles.end_modal} style={{
         transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
         opacity: props.show ? '1' : '0'
@@ -13,4 +13,4 @@ const luserModal = (props) => (
     </div>
 );
 
-export default luserModal;
+export default looserModal;

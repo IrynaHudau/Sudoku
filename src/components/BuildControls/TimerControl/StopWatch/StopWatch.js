@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-import cssStyles from '../Clock/Clock.module.css';
+import cssStyles from '../StopWatch/StopWatch.module.css';
 
-class Clock extends  Component{
+class StopWatch extends  Component{
     constructor(props){
         super(props);
         this.state = {
@@ -10,10 +10,8 @@ class Clock extends  Component{
         };
     };
 
-
-    componentWillUnmount() {
+    componentWillUnmount = () =>{
         clearInterval(this.incrementer);
-        // console.log(this.incrementer);
     }
 
     getMilliseconds = () => {
@@ -45,29 +43,25 @@ class Clock extends  Component{
    stopTimer = () => {
      clearInterval(this.incrementer);
      this.setState({status: false});
-     console.log("status = "+this.state.status);
    }
 
 render(){
-    // if(this.props.startTimer){   
-    //     this.startTimer();
-    // }
-    
     return(
-        <div className={cssStyles.display}>
+        <div className={cssStyles.display} >
             <div className={cssStyles.clock}>
-                <h1>{this.getMinutes()}:{this.getSeconds()}:{this.getMilliseconds()}</h1>
+                <h1  >{this.getMinutes()}:{this.getSeconds()}:{this.getMilliseconds()}</h1>
             </div>
             <div className={cssStyles.btn_group}>
                 <button 
                     className={cssStyles.btn}  
-                    style={{color: '#fff', backgroundColor: '#5cb85c'}} 
+                    style={{backgroundImage: 'radial-gradient(circle, #5cb85c, #81c281, green)'}}
+                   // style={{color: '#fff', backgroundColor: '#5cb85c'}} 
                     disabled={this.props.active}
                     onClick={this.resetTimer}>Reset
                 </button>
                 <button 
                     className={cssStyles.btn}  
-                    style={{color: '#fff', backgroundColor: '#f0ad4e'}}
+                    style={{backgroundImage: 'radial-gradient(circle, #ec971f, #ecb261, rgb(230, 150, 1))'}}
                     disabled={this.props.active}
                     onClick={this.state.status ? this.stopTimer : this.startTimer}>
                     {this.state.status ? 'Stop' : 'Start'}
@@ -78,4 +72,4 @@ render(){
 }
 }
 
-export default Clock;
+export default StopWatch;
