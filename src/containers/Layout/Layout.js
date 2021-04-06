@@ -18,7 +18,7 @@ class Layout extends Component{
                     {this.props.children}
                 </main>
                 <div className={cssStyles.footer}>
-                    <h2>Made with love!</h2>
+                    <h2>Made for fun!</h2>
                 </div>
             </Aux>
         );
