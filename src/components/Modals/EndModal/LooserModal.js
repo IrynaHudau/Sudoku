@@ -6,8 +6,8 @@ const looserModal = (props) => (
         transform: props.show ? 'translateY(0)' : 'translateY(-100vh)',
         opacity: props.show ? '1' : '0'
     }}>
-        <h3>YOU SUDOKU PUZZLE FIELD INCORRECTLY!!</h3>
-        <p>You have misstakes ...</p>
+        <h3>YOUR SUDOKU PUZZLE SOLVED INCORRECTLY!</h3>
+        <p>You have some mistakes ...</p>
         <p style={{color:'red'}}>{props.value}</p>
         <button onClick={props.startOverHandler}>Start Over</button>
     </div>
