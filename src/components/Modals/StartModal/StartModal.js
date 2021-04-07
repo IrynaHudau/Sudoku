@@ -25,7 +25,7 @@ class startModal extends Component{
                 transform: this.props.show ? 'translateY(0)' : 'translateY(-100vh)',
                 opacity: this.props.show ? '1' : '0'
             }}>
-                <h3>Welcom to The SUDOKU GAME!</h3>
+                <h3>Welcome to The SUDOKU GAME!</h3>
                 <p>Here are some simple rules:</p>
                 <ol>
                     <li>Each row must contain the digits 1-9 without repetition.</li>
@@ -35,7 +35,7 @@ class startModal extends Component{
                 
                     <p>Pick any level</p>
                     <select id = "select" onChange={this.selectHandler}>
-                        <option value="">--Please choose a level--</option>
+                        <option value="">--Please, choose a level--</option>
                         <option value="easy">Easy</option>
                         <option value="medium">Medium</option>
                         <option value="hard">Hard</option>
