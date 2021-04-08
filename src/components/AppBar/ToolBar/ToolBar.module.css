@@ -2,15 +2,17 @@
     height: 50px;
     width: 100%;
     position: fixed;
-    top: 5;
-    left:0;
+    top: 0;
+    left: auto;
+    right: 0;
     background-color: #1abc9c;
     display: flex;
+    flex-shrink: 0;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    z-index: 90;
+    z-index: 1100;
 }
 
 .toolbar nav{

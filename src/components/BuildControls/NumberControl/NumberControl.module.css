@@ -1,5 +1,4 @@
 .number_box{
-    width: 300px;
     display: flex;
     justify-content: center;
     cursor: pointer;
@@ -18,9 +17,10 @@
 
 .styled{
     border: none;
+    width: 50px;
+    height: 50px;
     outline: none;
-    padding: 5px 8px;
-    font-size: 1.5rem;
+    /* padding: 5px 8px; */
     text-align: center;
     color: black;
     background-color: inherit;
@@ -35,10 +35,21 @@
     color: lightgray;
 }
 
-@media (min-width:200px) and (min-height:560px){
+@media only screen and (max-width: 500px) {
   .styled{
-    font-size: 1rem;
+      width: 40px;
+      height: 45px;
   }
-
 }
-
+@media only screen and (max-width: 400px) {
+  .styled{
+      width: 35px;
+      height: 45px;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .styled{
+      width: 25px;
+      height: 45px;
+  }
+}

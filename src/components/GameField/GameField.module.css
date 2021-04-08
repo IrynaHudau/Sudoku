@@ -1,16 +1,15 @@
 .cell_style{
-    width: 4rem;
-    height: 2rem;
+    width: 5rem;
+    height: 6rem;
     border: 1px solid lightblue;
     text-align: center; 
-  }
+}
   th:hover {background-color:rgb(149, 226, 240)}
 
  .style{
    overflow: scroll;
-   width: 100%;
-   height: 390px;
-   padding: 20px;
+   table-layout:fixed;
+   padding: 32px 24px;
    border: 1px solid gray;
    text-align: center;
    border-collapse: collapse;
@@ -31,39 +30,35 @@ tr:nth-child(1), tr:nth-child(4), tr:nth-child(7){
 tr:nth-child(9){
    border-bottom: solid 2px green;
   }
+
+  @media (min-width: 600px){
+    .style{
+      padding-left: 24px;
+      padding-right: 24px;
+    } 
+  }
    
-@media (min-width:200px) and (min-height:560px){
-    .style{
-        width: 200px;
-        height: 190px;
-    }
+  @media only screen and (max-width: 600px) {
     .cell_style{
-      width: 2rem;
-      height: 1rem;
+      width: 3rem;
+      height: 4rem;
     }
-
-}
-
-@media (min-width:400px){
-    .style{
-        width: 350px;
-        height: 390px;
+  }
+  @media only screen and (max-width: 450px) {
+    .cell_style{
+      width: 2.8rem;
+      height: 3.4rem;
     }
-
-}
-
-@media (min-width:700px) {
-    .style{
-        width: 400px;
-        height: 390px;
+  }
+  @media only screen and (max-width: 400px) {
+    .cell_style{
+      width: 2.3rem;
+      height: 3rem;
     }
-
-}
-
-@media (min-width:1000px){
-    .style{
-        width: 500px;
-        height: 390px;
+  }
+  @media only screen and (max-width: 320px) {
+    .cell_style{
+      width: 1.8rem;
+      height: 3rem;
     }
-
-}
+  }

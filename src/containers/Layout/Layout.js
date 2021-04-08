@@ -6,16 +6,22 @@ import ToolBar from '../../components/AppBar/ToolBar/ToolBar';
 class Layout extends Component{
     render(){
         return(
-            <Aux>
-                <div style={{ width: '100%', background:'yellow', padding:'4px',  height: '20px'}}>
+            <Aux >
+                <div>
+                    <ToolBar/>
                 </div>
-                <ToolBar />
-                <main className={cssStyles.main} >
-                    {this.props.children}
-                </main>
-                <div className={cssStyles.footer}>
-                    <h2>Made for fun!</h2>
+                <div className={cssStyles.container}>
+                    <main className={cssStyles.main}>
+                        {this.props.children}
+                    </main>
                 </div>
+                <footer className={cssStyles.footer}>    
+                    <div className={cssStyles.container}>
+                       <div className={cssStyles.inner_footer}>
+                            <h2>Made for fun!</h2> 
+                        </div>
+                    </div>      
+                </footer> 
             </Aux>
         );
     }

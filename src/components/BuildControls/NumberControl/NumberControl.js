@@ -3,12 +3,11 @@ import cssStyles from '.././NumberControl/NumberControl.module.css';
 
 const number = (props) => (
     <div >
-        {/* style={{width: '3rem'}} */}
         <button 
             className={!props.isActive ? cssStyles.styled : [ cssStyles.styled , cssStyles.active].join(' ')}
             onClick={props.click}
             disabled={props.activet}>
-                {props.label}
+                <h3>{props.label}</h3>
         </button>
     </div>
 );

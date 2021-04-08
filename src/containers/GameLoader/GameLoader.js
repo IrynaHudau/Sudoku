@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import cssStyles from '../GameLoader/GameLoader.module.css';
 
 import GameField from '../../components/GameField/GameField';
 import NumbersControl from '../../components/BuildControls/NumberControl/NumbersControl';
@@ -73,17 +72,13 @@ class LoadGame extends Component{
         this.setState({fieldData: data, notActivCellXY: coordinateXY});
     }
 
-
     selectNumberHandler = (numb) => {
         this.setState({ activeNum: numb ,selectedNumber:numb});
+        this.setState({showPopup: false});
     };
 
     openPopupHandler = () => {
         this.setState({showPopup: true});
-      }
-      
-    closePopupHandler = () => {
-        this.setState({showPopup: false});
       }
 
     selectGameFieldCellHandler = (event) =>{
@@ -119,36 +114,44 @@ class LoadGame extends Component{
     };
 
     render(){
-        let startTimer = false;
         const enable = this.state.level != 0  &&  this.state.showStartModal == false;
 
         let popup = null;
         if(this.state.showPopup){
-            popup = (<WarningEmptyCellPopUp handleClose={this.closePopupHandler}/>);   
+            popup = (<WarningEmptyCellPopUp/>);   
         }
         let gameEnd = null;
         if(this.state.endGameMsg == 'Puzzle done!'){
-            gameEnd = (<WinnerModal show={this.state.showEndModal} startOverHandler={this.startOverHandler} value={this.state.endGameMsg}/>);
+            gameEnd = (<WinnerModal 
+                            show={this.state.showEndModal} 
+                            startOverHandler={this.startOverHandler} 
+                            value={this.state.endGameMsg}/>);
         }else{
-            gameEnd = (<LooserModal show={this.state.showEndModal} startOverHandler={this.startOverHandler} value={this.state.endGameMsg}/>);
+            gameEnd = (<LooserModal 
+                            show={this.state.showEndModal} 
+                            startOverHandler={this.startOverHandler} 
+                            value={this.state.endGameMsg}/>);
         }
         
         return(
-            <div className={cssStyles.row}>
-                <div className={cssStyles.main}>
-                    {popup}
-                    {gameEnd}
-                    <StartModal 
-                        show={this.state.showStartModal} 
-                        onHide={this.handleClose} 
-                        backdrop="static" 
-                        // calcelledGame={this.calcelGameHandler}
-                        startGame={this.startGameHandler}
-                    />           
-                    <TimerControl disabled={!enable} startOverHandler={this.startOverHandler}/>
-                    <GameField disabled={!enable} data={this.state.fieldData} cell={this.selectGameFieldCellHandler} nonActiveCells={this.state.notActivCellXY}/>
-                    <NumbersControl disabled={!enable} clicked={this.selectNumberHandler} activeNum={this.state.activeNum}/>
-                </div>
+            <div>
+                {popup}
+                {gameEnd}
+                <StartModal 
+                    show={this.state.showStartModal} 
+                    onHide={this.handleClose} 
+                    backdrop="static" 
+                    // calcelledGame={this.calcelGameHandler}
+                    startGame={this.startGameHandler}
+                />           
+                <TimerControl disabled={!enable} startOverHandler={this.startOverHandler}/>
+                <GameField 
+                    disabled={!enable} 
+                    data={this.state.fieldData} 
+                    cell={this.selectGameFieldCellHandler} 
+                    nonActiveCells={this.state.notActivCellXY}
+                />
+                <NumbersControl disabled={!enable} clicked={this.selectNumberHandler} activeNum={this.state.activeNum}/>
             </div>
         );
     }

@@ -5,6 +5,7 @@
 
 .clock{
     padding: 20px;
+    width: 108px;
 }
 
 .btn_group{
@@ -17,6 +18,8 @@ h1{
 }
 
 .btn {
+  width: 58px;
+  height: 28px;
   float: right;
   margin-right: 4px;
   padding: 5px 15px;
@@ -26,17 +29,17 @@ h1{
   border-radius: 15px;
   box-shadow: 0 4px #999;
   outline: none;
+  margin-bottom: 5px;
   }
 
   .btn:active {
     box-shadow: 0 5px rgb(122, 122, 122);
     transform: translateY(4px);
   }
-/* 
-@media (max-width: 322px) {
-    .btn {   
-      flex-direction: row;
-      float: left;
-      justify-content: space-evenly;
+
+  @media (max-width: 400px) {
+    .display{
+      display: flex;
+      flex-direction: column;
     }
-  } */
+  }

@@ -9,7 +9,6 @@
   
   /* The actual popup */
   .popup .popuptext {
-    /* visibility: hidden; */
     width: 160px;
     background-color: rgb(231, 159, 91);
     color:black;

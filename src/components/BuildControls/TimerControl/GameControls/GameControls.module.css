@@ -1,5 +1,7 @@
 .btn {
     float: right;
+    width: 97px;
+    height: 28px;
     /* background-color: orangered; */
     background-image: radial-gradient(circle,#ff9900,red , rgb(221, 143, 70));
     margin-right: 4px;

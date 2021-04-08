@@ -27,7 +27,7 @@ const gamefield = (props) => {
     return (
         <div style={{display: 'flex',justifyContent: 'center'}}>
             <table className ={styleClass.style} style={props.disabled ? {pointerEvents: 'none'} : {pointerEvents: 'auto'}}>
-                <tbody>
+                <tbody >
                     {tableCell}
                 </tbody>
             </table>
