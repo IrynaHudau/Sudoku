@@ -1,3 +1,8 @@
+
+
+[![Custom badge](https://img.shields.io/static/v1?logoColor=red&label=Run%20App&logo=Coderwall&message=Sudoku&color=orange)](https://sudoku-for-fun.herokuapp.com/)
+
+
 # Getting Started with Create React App
 
 `Components Diagram`
